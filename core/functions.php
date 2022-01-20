@@ -172,7 +172,7 @@ class functions
 	public function get_utc_offset()
 	{
 		$utc_dtz = new \DateTimeZone('UTC');
-		$php_dtz = new \DateTimeZone(ini_get('date.timezone'));
+		$php_dtz = new \DateTimeZone(date_default_timezone_get());
 		$utc_dt  = new \DateTime('now', $utc_dtz);
 
 		return $php_dtz->getOffset($utc_dt);
