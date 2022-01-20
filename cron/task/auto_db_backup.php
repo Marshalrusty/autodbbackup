@@ -299,7 +299,7 @@ class auto_db_backup extends base
 	*/
 	public function should_run()
 	{
-		if (!in_array(ini_get('date.timezone'), timezone_identifiers_list()))
+		if (!in_array(date_default_timezone_get(), timezone_identifiers_list()))
 		{
 			// Report this in the log
 			$this->log->add('admin', $this->user->data['user_id'], $this->user->ip, 'LOG_AUTO_DB_BACKUP_TIMEZONE');
