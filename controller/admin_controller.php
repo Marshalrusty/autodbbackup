@@ -105,7 +105,7 @@ class admin_controller
 		}
 
 		// Is there a valid timezone in php.ini?
-		if (!in_array(ini_get('date.timezone'), timezone_identifiers_list()))
+		if (!in_array(date_default_timezone_get(), timezone_identifiers_list()))
 		{
 			trigger_error($this->language->lang('INVALID_PHP_TIMEZONE'), E_USER_WARNING);
 		}
